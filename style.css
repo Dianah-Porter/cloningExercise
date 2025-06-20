@@ -5,8 +5,8 @@ body{
 .logo{
     color: blue;
     font-size: 24px;
-    margin-left: 30px;
-    margin-right: 531px;
+    margin-left: 20px;
+    margin-right: 200px;
 }
 .nav-bar{
     display: flex;
@@ -22,7 +22,7 @@ body{
     justify-content: space-around;
     list-style: none;
     /* text-decoration: none; */
-    gap: 20px;
+    gap: 25px;
     padding: 6px;
     color: black;
     font-size: 17px;
@@ -68,7 +68,7 @@ img{
     color: white;
     margin-top: 0px;
     font-family: "poppins";
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 300px;
 }
 .overlay-content{
@@ -83,12 +83,15 @@ img{
     display: flex;
     background-color: rgb(228, 226, 226);
     padding: 30px;
-    width: 1000px;
+    width: 800px;
     border-radius: 10px;
     gap: 30px;
     position: absolute;
     /* z-index: 2; */
 
+}
+li:hover{
+    color: blue;
 }
 
 .a{
@@ -102,6 +105,7 @@ img{
 }
 .a:hover {
   border-color: #007bff;
+  
 }
 .a i{
     margin-right: 20px;
@@ -141,10 +145,10 @@ img{
     border: none;
 }
 .five-boxes{
-    width: 100%;
+    width: 90%;
     height: 45vh;
     border-radius: 100px;
-    margin: 1px;
+    margin: 20px;
     display: flex;
     justify-content: space-around;
     gap: 30px;
