@@ -1,0 +1,481 @@
+/*@license For license information please refer to blossom-one-key-onboarding.licenses.txt*/
+(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([[1156],{83162:function(e,n,t){t.r(n),t.d(n,{OneKeyOnboarding:function(){return dt},default:function(){return ut}});var a=t(96540),r=t(85625),l=t(77643),i=t(95196),o=t(68963),c=t(36360),s=t(2619),m=t(52431),d=t(15144),u=t(30313),E=t(75826),g=t(68174),p=t(10159),y=t(39938),v=t(94495),b=t(56755),S=t(1474),O=t(71831),N=t(67811),f=t(67045),_=t(67781),L=t(15685),k=t(61837),h=t(46198),I=t(90745),C=t(94220),U=t(34638),A=t(67226),R=t(93149),D=t(86776),F=t(16484),x=t(82960),T=Object.defineProperty,B=Object.defineProperties,P=Object.getOwnPropertyDescriptors,G=Object.getOwnPropertySymbols,w=Object.prototype.hasOwnProperty,z=Object.prototype.propertyIsEnumerable,M=(e,n,t)=>n in e?T(e,n,{enumerable:!0,configurable:!0,writable:!0,value:t}):e[n]=t,K=(e,n)=>{for(var t in n||(n={}))w.call(n,t)&&M(e,t,n[t]);if(G)for(var t of G(n))z.call(n,t)&&M(e,t,n[t]);return e},$=(e,n)=>B(e,P(n)),V=e=>"OneKeyUniversalOnboardingOperationAction"===(null==e?void 0:e.__typename)?e.actionType:"",W=()=>{window.location.href=`/onboarding/error?origin=${encodeURIComponent(window.location.href)}`},j=e=>{try{const n=decodeURIComponent(e);return n!==e?j(n):n}catch(n){return e}},J=e=>{const[n,t]=e.split("?"),a=encodeURIComponent(n);let r="";t&&(r=t.split("&").map((e=>{const[n,t]=e.split("="),a=j(t);return`${n}=${encodeURIComponent(a)}`})).join("&"));return(r?`${a}?${r}`:a).replace(/%2F/g,"/")},Y=e=>{try{return(e=>{const n=e.pathname+e.search;return J(n)})(new URL(e))}catch(n){return/^\/[^/].*/.test(e)?J(e):"/"}},H=e=>{const n=e?Y(e):"/";window.location.assign(n)},Q={ONE_KEY_UNIVERSAL_ONBOARDING_QUERY_ERROR:new s.SystemEvent(s.SystemEventLevel.ERROR,"ONE_KEY_UNIVERSAL_ONBOARDING_QUERY_ERROR"),ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_ERROR:new s.SystemEvent(s.SystemEventLevel.ERROR,"ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_ERROR"),ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_FAILURE:new s.SystemEvent(s.SystemEventLevel.ERROR,"ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_FAILURE"),ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_SUCCESS:new s.SystemEvent(s.SystemEventLevel.INFO,"ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_SUCCESS"),ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_ERROR:new s.SystemEvent(s.SystemEventLevel.ERROR,"ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_ERROR"),ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_FAILURE:new s.SystemEvent(s.SystemEventLevel.ERROR,"ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_FAILURE"),ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_SUCCESS:new s.SystemEvent(s.SystemEventLevel.INFO,"ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_SUCCESS")},X=e=>JSON.stringify(e),q=(0,a.createContext)({isDialogOpen:!1,openDialog:()=>{},closeDialog:()=>{},DialogComponent:()=>null}),Z=({mockedContext:e,children:n})=>{const[t,r,l]=(0,p.useDialog)("one-key-onboarding-dialog",void 0,!1),i=(0,a.useCallback)((()=>{r.openDialog()}),[r]),o=(0,a.useCallback)((()=>{r.closeDialog()}),[r]),c=(0,a.useMemo)((()=>({isDialogOpen:t,openDialog:i,closeDialog:o,DialogComponent:l})),[t,i,o,l]);return a.createElement(q.Provider,{value:e||c},n)},ee=()=>(0,a.useContext)(q),ne=(0,a.createContext)({currentScreen:null,getIsLastScreen:()=>!1,navigateToNextScreen:()=>{},setScreens:()=>{}}),te=({mockedContext:e,children:n})=>{const[t,r]=(0,a.useState)({screens:[],currentScreen:null,currentScreenIndex:0}),l=(0,a.useCallback)((()=>t.currentScreenIndex===t.screens.length-1),[t]),i=(0,a.useCallback)((()=>{r((e=>{const n=e.currentScreenIndex+1;return e.screens[n]?$(K({},e),{currentScreen:e.screens[n].screen,currentScreenIndex:n}):e}))}),[]),o=(0,a.useCallback)((e=>{r((n=>$(K({},n),{screens:e,currentScreen:e[0]?e[0].screen:null,currentScreenIndex:0})))}),[]),c=(0,a.useMemo)((()=>({currentScreen:t.currentScreen,getIsLastScreen:l,navigateToNextScreen:i,setScreens:o})),[t,l,i,o]);return a.createElement(ne.Provider,{value:e||c},n)},ae=()=>(0,a.useContext)(ne),re=()=>{const{closeDialog:e}=ee(),{navigateToNextScreen:n,getIsLastScreen:t}=ae();return{proceedWithOnboardingFlow:(0,a.useCallback)((()=>{t()?e():n()}),[t,n,e])}},le=l.J1`
+  mutation OneKeyUniversalOnboardingMutation($context: ContextInput!, $onboardingOperation: String!) {
+    oneKeyUniversalOnboardingOperation(context: $context, onboardingOperation: $onboardingOperation) {
+      operationStatus
+    }
+  }
+`,ie=e=>{const{context:n}=(0,c.R)();return(0,y.n)(le,{variables:{context:n,onboardingOperation:e}})},oe=l.J1`
+  fragment EGDSIconFragment on Icon {
+    description
+    id
+    size
+    theme
+    title
+    withBackground
+  }
+`,ce=({className:e,theme:n,isAriaHidden:t=!1,data:r})=>{var l;const i=(null==r?void 0:r.withBackground)?"info":void 0;return a.createElement(v.a,{className:e,description:t||null==r?void 0:r.description,id:null==r?void 0:r.id,name:null!==r?r.id:"",size:(null==r?void 0:r.size)?v.E[r.size]:void 0,title:t?void 0:null!=(l=null==r?void 0:r.title)?l:void 0,theme:n||(null==r?void 0:r.theme)||void 0,spotlight:i})};ce.displayName="LoyaltyEGDSIcon",ce.fragment=oe;var se=l.J1`
+  fragment EGDSIllustrationFragment on Illustration {
+    description
+    id
+    link: url
+  }
+`,me=({data:e})=>a.createElement(b.E,{alt:e.description,url:e.link});me.displayName="Illustration",me.fragment=se;var de=l.J1`
+  fragment EGDSMarkFragment on Mark {
+    description
+    id
+    markSize: size
+    url {
+      ... on HttpURI {
+        __typename
+        relativePath
+        value
+      }
+    }
+  }
+`,ue=({className:e,markSize:n,data:t})=>{var r;return a.createElement(S.E,{className:e,description:t.description,id:t.id,name:t.id,size:n||t.markSize&&S.c[t.markSize],url:null==(r=t.url)?void 0:r.value})};ue.displayName="LoyaltyEGDSMark",ue.fragment=de;var Ee=l.J1`
+  fragment EGDSGraphicFragment on UIGraphic {
+    ... on Icon {
+      ...EGDSIconFragment
+    }
+
+    ... on Mark {
+      ...EGDSMarkFragment
+    }
+
+    ... on Illustration {
+      ...EGDSIllustrationFragment
+    }
+  }
+
+  ${ce.fragment}
+  ${ue.fragment}
+  ${me.fragment}
+`,ge=({className:e,markSize:n,iconProps:t,data:r})=>{switch(r.__typename){case"Icon":return a.createElement(ce,K({className:e,data:r},t));case"Mark":return a.createElement(ue,{className:e,data:r,markSize:n});case"Illustration":return a.createElement(me,{data:r});default:return null}};ge.displayName="EGDSGraphic",ge.fragment=Ee;var pe=({data:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(ge,{data:e,markSize:8})),a.createElement(g.rw,null,a.createElement(ge,{data:e,markSize:12})));pe.displayName="TitleImage";var ye=l.J1`
+  fragment BrandAssetsFragment on OneKeyUniversalOnboardingBrandAssetCollection {
+    titleImage {
+      ...EGDSGraphicFragment
+    }
+    alternateTitleImage {
+      ...EGDSGraphicFragment
+    }
+    brandLogos {
+      ...EGDSGraphicFragment
+    }
+  }
+
+  ${ge.fragment}
+`,ve=({data:e,isAlternateTitleImage:n})=>{const{titleImage:t,alternateTitleImage:r,brandLogos:l}=e;return a.createElement(d.i,{direction:"column",justifyContent:"center",alignItems:"center",space:"four"},a.createElement(d.j,null,n?a.createElement(pe,{data:r}):a.createElement(pe,{data:t})),l.length>0&&a.createElement(d.j,null,a.createElement(d.i,{justifyContent:"center",alignItems:"center",space:"four"},l.map((e=>a.createElement(d.j,{key:e.description},a.createElement(ge,{data:e,markSize:6})))))))};ve.fragment=ye,ve.displayName="BrandAssets";var be={EXTERNAL:"_blank",INTERNAL:"_self"},Se={SMALL:"small",MEDIUM:"medium",LARGE:"large"},Oe=e=>be[e.target],Ne=l.J1`
+  fragment EGDSButtonFragment on EGDSButton {
+    primary
+    accessibility
+    disabled
+    analytics {
+      linkName
+      referrerId
+    }
+    icon {
+      description
+      id
+      title
+      token
+      theme
+    }
+    action {
+      ...ButtonLinkActionFragment
+    }
+  }
+
+  fragment ButtonLinkActionFragment on UILinkAction {
+    resource {
+      ...HttpURIFragment
+    }
+    target
+    useRelativePath
+  }
+
+  fragment HttpURIFragment on HttpURI {
+    relativePath
+    value
+  }
+`,fe=({className:e,dataStid:n,domRef:t,href:r,isFullWidth:l,onClickHandler:i,size:o,inverse:s,isDisabled:m,isNoTextAllowed:d,data:{__typename:u,accessibility:g,primary:p,disabled:y,analytics:b,action:S,icon:k}})=>{var h,I,C,U,A;const R=(0,E.KY)(),D=(e=>{if("UILinkAction"!==(null==e?void 0:e.__typename))return{};const n=(e=>"HttpURI"!==e.resource.__typename?null:e.useRelativePath?e.resource.relativePath:e.resource.value)(e);return n?{href:n,target:Oe(e),tag:"a"}:{}})(S),F=(e=>{const n=e.indexOf("uurl")>-1,t=(0,L.zy)(),r=()=>({pathname:`${t.pathname}`,search:`${t.search}`,hash:`${t.hash}`}),{context:l}=(0,c.R)(),[i,o]=(0,a.useState)(r),s=null==l?void 0:l.siteId;(0,a.useEffect)((()=>{const e=()=>o(r());return window.addEventListener("popstate",e),()=>window.removeEventListener("popstate",e)}),[r]);let m="";return n||(m=e+(-1!==e.indexOf("?")?"":"?")+function(e,n){const{pathname:t,search:a,hash:r}=e,l=t.concat(a,r);return 30031===n?`&redirectUrl=targeturl=${encodeURIComponent(l)}&referrerId=wl_prod`:`&uurl=${encodeURIComponent(`e3id=redr&rurl=${l}`)}`}(i||{},s)),m})(null!=(h=D.href)?h:""),x=a.useCallback((e=>{null==i||i(e),b&&R(b.referrerId,b.linkName)}),[i,R,b]);if(!p&&!d)return null;(null==D?void 0:D.href)&&F&&(D.href=F);const T=K({"aria-label":null!=g?g:void 0,className:e,disabled:m||y,href:r,isFullWidth:l,onClick:x,size:o,domRef:t},D);switch(u){case"UIPrimaryButton":return a.createElement(O.E,$(K({},T),{"data-stid":n,inverse:s}),p);case"UISecondaryButton":return a.createElement(N.E,$(K({},T),{"data-stid":n,inverse:s}),p);case"UITertiaryButton":return a.createElement(f.E,$(K({},T),{"data-stid":n,inverse:s}),k&&a.createElement(v.a,{description:k.description,id:k.id,name:k.token,title:null!=(I=k.title)?I:void 0,theme:null!=(C=k.theme)?C:void 0}),p);case"EGDSOverlayButton":return a.createElement(_.E,$(K({},T),{"data-stid":n}),k&&a.createElement(v.a,{description:k.description,id:k.id,name:k.token,title:null!=(U=k.title)?U:void 0,theme:null!=(A=k.theme)?A:void 0}),p);default:return null}};fe.fragment=Ne,fe.displayName="LoyaltyEGDSButton";var _e=(0,a.createContext)({isMutationInProgress:!1,setIsMutationInProgress:()=>{}}),Le=({mockedContext:e,children:n})=>{const[t,r]=(0,a.useState)(!1),l=(0,a.useCallback)((e=>{r(e)}),[]),i=(0,a.useMemo)((()=>({isMutationInProgress:t,setIsMutationInProgress:l})),[t,l]);return a.createElement(_e.Provider,{value:e||i},n)},ke=()=>(0,a.useContext)(_e),he=({button:e,onNullActionClick:n,onOperationSuccess:t,onOperationFailure:r,onOperationError:l})=>{const{closeDialog:i}=ee(),{proceedWithOnboardingFlow:o}=re(),{setIsMutationInProgress:c}=ke(),[s,{called:m}]=ie(V(e.action));(0,a.useEffect)((()=>{c(m)}),[c,m]);const d=(0,a.useCallback)((()=>{i()}),[i]),u=(0,a.useCallback)((e=>{var n;(0,k.liveAnnounce)(e.accessibility||void 0),n=e,window.location.href=`${(e=>{const{resource:n,useRelativePath:t}=e;return"HttpURI"===n.__typename&&t?n.relativePath:n.value})(n)}`}),[]),E=(0,a.useCallback)((n=>{var t;switch(null==(t=e.secondaryAction)?void 0:t.__typename){case"EGDSDismissAction":return void d();case"UILinkAction":return void u(e.secondaryAction);default:n()}}),[e.secondaryAction,d,u]),g=(0,a.useCallback)((e=>{var n,a;switch(null==(a=null==(n=e.data)?void 0:n.oneKeyUniversalOnboardingOperation)?void 0:a.operationStatus){case"SUCCEEDED":null==t||t(),E(o);break;case"FAILED":default:null==r||r(e),E(o);break;case"FAILED_BLOCKING":null==r||r(e),W()}}),[t,r,E,o]);return{handleOnboardingButtonClick:(0,a.useCallback)((()=>{var t;switch(null==(t=e.action)?void 0:t.__typename){case"OneKeyUniversalOnboardingOperationAction":return void s().then((e=>{g(e)})).catch((e=>{null==l||l(e),W()}));case"EGDSDismissAction":return void d();case"UILinkAction":return void u(e.action);default:E(n)}}),[e.action,s,g,E,l,d,u,n])}},Ie=l.J1`
+  fragment OnboardingButtonFragment on OneKeyUniversalOnboardingButton {
+    button {
+      ...EGDSButtonFragment
+    }
+    action {
+      ...OneKeyUniversalOnboardingButtonActionFragment
+    }
+    secondaryAction {
+      ...OneKeyUniversalOnboardingButtonActionFragment
+    }
+  }
+
+  fragment OneKeyUniversalOnboardingButtonActionFragment on OneKeyUniversalOnboardingButtonAction {
+    ...OneKeyUniversalOnboardingButtonDismissActionFragment
+    ...OneKeyUniversalOnboardingButtonUILinkActionFragment
+    ...OneKeyUniversalOnboardingOperationActionFragment
+  }
+
+  fragment OneKeyUniversalOnboardingButtonDismissActionFragment on EGDSDismissAction {
+    accessibility
+    analytics {
+      linkName
+      referrerId
+    }
+    label
+  }
+
+  fragment OneKeyUniversalOnboardingButtonUILinkActionFragment on UILinkAction {
+    accessibility
+    analytics {
+      linkName
+      referrerId
+    }
+    resource {
+      value
+      ...ButtonHttpURIFragment
+    }
+    target
+    useRelativePath
+  }
+
+  fragment OneKeyUniversalOnboardingOperationActionFragment on OneKeyUniversalOnboardingOperationAction {
+    actionType
+  }
+
+  fragment ButtonHttpURIFragment on HttpURI {
+    relativePath
+  }
+
+  ${fe.fragment}
+`,Ce=({data:e,size:n,isFullWidth:t,isNoTextAllowed:r,dataStid:l,domRef:i,onNullActionClick:o,onOperationSuccess:c,onOperationFailure:s,onOperationError:m})=>{const{isMutationInProgress:d}=ke(),{handleOnboardingButtonClick:u}=he({button:e,onNullActionClick:o,onOperationSuccess:c,onOperationFailure:s,onOperationError:m});return a.createElement(fe,{data:e.button,domRef:i,isDisabled:d,isFullWidth:t,size:n,isNoTextAllowed:r,dataStid:l,onClickHandler:u})};Ce.fragment=Ie,Ce.displayName="OnboardingButton";var Ue=l.J1`
+  fragment EGDSStandardLinkFragment on EGDSStandardLink {
+    action {
+      accessibility
+      analytics {
+        linkName
+        referrerId
+      }
+      resource {
+        value
+        ... on HttpURI {
+          relativePath
+        }
+      }
+      target
+      useRelativePath
+    }
+    disabled
+    standardLinkIcon: icon {
+      ...EGDSIconFragment
+    }
+    iconPosition
+    size
+    text
+  }
+  ${ce.fragment}
+`,Ae=({icon:e,iconPosition:n,iconPositionToMatch:t})=>e&&n===t?a.createElement(ce,{data:e}):null,Re=({className:e,dataStid:n,inline:t,theme:r,align:l,size:i,data:o,onClickHandler:c})=>{const{action:{analytics:s,target:m,accessibility:d},disabled:u,iconPosition:g,standardLinkIcon:p,size:y,text:v}=o,b=(0,E.KY)(),S=a.useCallback((()=>{b(s.referrerId,s.linkName),c&&c()}),[b,s]),O=a.useCallback((()=>(({resource:e,useRelativePath:n})=>"HttpURI"===e.__typename&&n?e.relativePath:e.value)(o.action)),[o.action]);return a.createElement(h.E,{className:e,"data-stid":n,size:i||Se[y],onClickCapture:S,inline:t,disabled:u,theme:r||"default",align:l},a.createElement("a",{target:be[m],href:O()},a.createElement(Ae,{icon:p,iconPosition:g,iconPositionToMatch:"LEADING"}),v,a.createElement(Ae,{icon:p,iconPosition:g,iconPositionToMatch:"TRAILING"}),d&&a.createElement(I.c,{className:"is-visually-hidden"},d)))};Re.fragment=Ue,Re.displayName="EGDSStandardLink";var De=l.J1`
+  fragment OnboardingLinkFragment on OneKeyUniversalOnboardingLink {
+    button {
+      ...OnboardingButtonFragment
+    }
+    link {
+      ...EGDSStandardLinkFragment
+    }
+  }
+
+  ${Ce.fragment}
+  ${Re.fragment}
+`,Fe=e=>{if("HttpURI"===e.resource.__typename)return e.useRelativePath?e.resource.relativePath:e.resource.value},xe=e=>{var n;const{data:t,isButton:r}=e,{button:l,link:i}=t;if(r){const{size:t,isFullWidth:r}=e;return"UILinkAction"===(null==(n=l.action)?void 0:n.__typename)&&a.createElement(f.E,{tag:"a",href:Fe(l.action),target:(o=l.action,be[o.target]),size:t,isFullWidth:r},l.button.primary)}var o;const{align:c,size:s}=e;return a.createElement(Re,{data:i,align:c,size:s})};xe.fragment=De,xe.displayName="OnboardingLink";var Te=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{padding:{inline:"six",block:"eight"}},a.createElement("div",null,e))),a.createElement(g.rw,null,a.createElement(C.b,{padding:{inline:"six",block:"twelve"}},a.createElement("div",null,e))),a.createElement(g.TD,null));Te.displayName="BrandAssetsSpacing";var Be=({data:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(xe,{data:e,align:"center",size:"small"})),a.createElement(g.rw,null,a.createElement(xe,{data:e,align:"center",size:"large"})));Be.displayName="ConsentLink";var Pe=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(d.i,{direction:"column",space:"two"},e)),a.createElement(g.rw,null,a.createElement(d.i,{direction:"column",space:"four"},e)));Pe.displayName="ConsentSectionLayout";var Ge=({children:e})=>a.createElement(d.j,null,e);Ge.displayName="ConsentSectionLayoutItem";var we=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(I.c,{align:"center",size:200},e)),a.createElement(g.rw,null,a.createElement(I.c,{align:"center",size:400},e)));we.displayName="ConsentText";var ze=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{padding:{inline:"six",block:"eight"}},e)),a.createElement(g.rw,null,a.createElement(C.b,{padding:{inline:"six",block:"twelve"}},e)));ze.displayName="ContentSpacing";var Me=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(d.i,{direction:"column",space:"large"},e)),a.createElement(g.rw,null,a.createElement(d.i,{direction:"column",space:"xlarge"},e)));Me.displayName="CTASectionLayout";var Ke=({children:e})=>a.createElement(d.j,null,e);Ke.displayName="CTASectionLayoutItem";var $e=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(U.d,{position:{top:"three",left:"three"},type:"absolute"},e)),a.createElement(g.zQ,null,a.createElement(U.d,{position:{top:"six",left:"six"},type:"absolute"},e)));$e.displayName="DismissButtonPosition";var Ve=({children:e})=>a.createElement("div",null,a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(A.a,{imageFit:"cover",ratio:A.E.R1_1},e)),a.createElement(g.rw,null,a.createElement(A.a,{imageFit:"cover",ratio:A.E.R3_2},e))));Ve.displayName="HeroImageFigure";var We=l.J1`
+  fragment HeroImageFragment on Image {
+    description
+    url
+  }
+`,je=({data:e,children:n})=>{const{url:t,description:r}=e;return a.createElement(Ve,null,a.createElement(A.b,{src:t,alt:r}),n&&a.createElement(U.d,{type:"absolute",position:{left:"zero",bottom:"zero",right:"zero"}},n))};je.fragment=We,je.displayName="HeroImage";var Je=({data:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(xe,{data:e,isButton:!0,size:m.E.SMALL,isFullWidth:!0})),a.createElement(g.rw,null,a.createElement(xe,{data:e,isButton:!0,size:m.E.LARGE,isFullWidth:!0}))),Ye=l.J1`
+  fragment PerkFragment on OneKeyUniversalOnboardingPerk {
+    description
+    icon {
+      token
+    }
+  }
+`,He=({data:e,size:n})=>{const{icon:t,description:r}=e;return a.createElement(d.i,{space:"two",alignItems:"center",justifyContent:t?"start":"center"},t&&a.createElement(v.a,{name:t.token,size:v.E.MEDIUM,spotlight:"standard"}),a.createElement(I.c,{align:t?"left":"center",size:n},r))};He.fragment=Ye,He.displayName="Perk";var Qe=({perks:e,size:n,space:t})=>a.createElement(d.i,{direction:"column",space:t},e.map(((e,t)=>a.createElement(d.j,{key:t},a.createElement(He,{data:e,size:n})))));Qe.displayName="Perks";var Xe=({perks:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{margin:{blockend:"two"}},a.createElement("div",null,a.createElement(Qe,{perks:e,size:300,space:"two"})))),a.createElement(g.rw,null,a.createElement(C.b,{margin:{blockend:"four"}},a.createElement("div",null,a.createElement(Qe,{perks:e,size:400,space:"four"})))));Xe.displayName="PerkContainer";var qe=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(u.E,null,e)),a.createElement(g.TD,null,a.createElement(u.E,{columns:2,blockSize:"100vb"},e)));qe.displayName="ScreenLayout";var Ze=({children:e})=>a.createElement(u.a,null,e);Ze.displayName="ScreenLayoutItem";var en=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{margin:{blockend:"six"}},a.createElement(I.E,{tag:"h1",size:4,align:"center"},e))),a.createElement(g.rw,null,a.createElement(C.b,{margin:{blockend:"eight"}},a.createElement(I.E,{tag:"h1",size:2,align:"center"},e))));en.displayName="Title";var nn=l.J1`
+  fragment WelcomeScreenFragment on OneKeyUniversalOnboardingWelcomeScreen {
+    heroImage {
+      ...HeroImageFragment
+    }
+    brandAssets {
+      ...BrandAssetsFragment
+    }
+    title
+    perks {
+      ...PerkFragment
+    }
+    learnMoreLink {
+      ...OnboardingLinkFragment
+    }
+    primaryButton {
+      ...OnboardingButtonFragment
+    }
+    consentText
+    termsAndConditionsLink {
+      ...OnboardingLinkFragment
+    }
+    privacyLink {
+      ...OnboardingLinkFragment
+    }
+    dismissButton {
+      ...OnboardingButtonFragment
+    }
+    onLoadOperation {
+      actionType
+    }
+    ariaLabel
+  }
+
+  ${xe.fragment}
+  ${ve.fragment}
+  ${je.fragment}
+  ${Ce.fragment}
+  ${He.fragment}
+`,tn=({data:e})=>{const{heroImage:n,brandAssets:t,title:r,perks:l,learnMoreLink:i,primaryButton:c,consentText:p,termsAndConditionsLink:y,privacyLink:v,dismissButton:b,onLoadOperation:S,ariaLabel:O}=e,N=p||y||v,f=(0,s.useLoggerEvents)(Q),{isDialogOpen:_,closeDialog:L}=ee(),{proceedWithOnboardingFlow:k}=re(),[h]=ie(V(S)),I=(0,a.useCallback)((()=>{f.ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_SUCCESS.log(X({message:"Welcome Screen mutation success"}))}),[f]),C=(0,a.useCallback)((e=>{f.ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_FAILURE.log(X({message:`Welcome Screen mutation failure. Onboarding Operation response: ${JSON.stringify(e.data)}`}))}),[f]),U=(0,a.useCallback)((e=>{f.ONE_KEY_UNIVERSAL_ONBOARDING_WELCOME_SCREEN_MUTATION_ERROR.log(X({message:"Welcome Screen mutation error",error:e}))}),[f]);return(0,a.useEffect)((()=>{S&&h().then((e=>{(e=>{var n,t;return"SUCCEEDED"===(null==(t=null==(n=e.data)?void 0:n.oneKeyUniversalOnboardingOperation)?void 0:t.operationStatus)})(e)?I():C(e)})).catch((e=>{U(e),W()}))}),[]),a.createElement(o.e,{isVisible:_,triggerRef:null,type:"full",ariaLabel:O},a.createElement(o.f,{padded:!1},a.createElement(E.E0,{eventData:{event:{event_version:"1.0.0",event_name:"onekey_welcome_onboarding.viewed",event_type:"Page View"},experience:{page_name:"OKOnboarding",page_name_detailed:"OKOnboardingWelcomeScreen"}}},a.createElement("div",{"data-stid":"one-key-onboarding-welcome-screen"},a.createElement(qe,null,a.createElement(Ze,null,a.createElement(je,{data:n},t&&a.createElement(Te,null,a.createElement(ve,{data:t})))),b&&a.createElement($e,null,a.createElement(Ce,{data:b,size:m.E.MEDIUM,isNoTextAllowed:!0,dataStid:"one-key-onboarding-welcome-screen-dismiss-button",onOperationSuccess:I,onOperationFailure:C,onOperationError:U,onNullActionClick:L})),a.createElement(Ze,null,a.createElement(ze,null,a.createElement(u.E,{columns:[(0,u.e)("0px","600px")],justifyContent:"center",alignItems:"center"},a.createElement(u.a,null,a.createElement(d.i,{direction:"column",space:"xlarge"},a.createElement(d.j,null,t&&a.createElement(g.LM,null,a.createElement(g.TD,null,a.createElement(d.j,null,a.createElement(ve,{data:t,isAlternateTitleImage:!0}))))),a.createElement(d.j,null,a.createElement("div",null,a.createElement(en,null,r),l.length>0&&a.createElement(Xe,{perks:l}),a.createElement(Je,{data:i}))),a.createElement(d.j,null,a.createElement(Me,null,N&&a.createElement(Ke,null,a.createElement(Pe,null,p&&a.createElement(Ge,null,a.createElement(we,null,p)),(y||v)&&a.createElement(Ge,null,a.createElement(d.i,{direction:"column",space:"two"},y&&a.createElement(d.j,null,a.createElement(Be,{data:y})),v&&a.createElement(d.j,null,a.createElement(Be,{data:v})))))),a.createElement(Ke,null,a.createElement(Ce,{data:c,size:m.E.LARGE,isFullWidth:!0,dataStid:"one-key-onboarding-welcome-screen-primary-button",onOperationSuccess:I,onOperationFailure:C,onOperationError:U,onNullActionClick:k}))))))))))))))};tn.fragment=nn,tn.displayName="WelcomeScreen";var an={small:"small",large:"large"},rn={lowtier:"lowtier",midtier:"midtier",hightier:"hightier",vip:"vip",extrahightier:"extrahightier","global-lowtier":"global-lowtier","global-middletier":"global-middletier","global-hightier":"global-hightier","global-extrahightier":"global-extrahightier"},ln=l.J1`
+  fragment EGDSLoyaltyBadgeFragment on EGDSLoyaltyBadge {
+    accessibility
+    badgeText: text
+    size
+    badgeTheme: theme
+  }
+`,on=e=>{const{data:n}=e;if(!n.badgeText)return null;const{size:t,badgeTheme:r,accessibility:l,badgeText:i}=n,o=r?rn[r]:void 0,c=t?an[t]:void 0;return a.createElement(R.r,{a11yText:null!=l?l:void 0,text:i,size:c,theme:o})};on.fragment=ln,on.displayName="EGDSLoyaltyBadge";var cn=l.J1`
+  fragment BalanceSectionFragment on OneKeyUniversalContextualOnboardingBalance {
+    title
+    balance
+    subTitles
+  }
+`,sn={[g.OB.SMALL]:300,[g.OB.MEDIUM]:400},mn=({data:e})=>{const{title:n,balance:t,subTitles:r}=e,l=(0,g.s5)(sn);return a.createElement("div",null,a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{margin:{blockend:"one"}},a.createElement(I.c,{size:200,align:"center"},n))),a.createElement(g.rw,null,a.createElement(C.b,{margin:{blockend:"two"}},a.createElement(I.c,{size:300,align:"center"},n)))),a.createElement(I.c,{size:700,align:"center",weight:"medium"},t),r.length>0&&a.createElement(C.b,{margin:{blockstart:"two"}},a.createElement("div",null,r.map(((e,n)=>a.createElement(I.c,{key:n,size:l,align:"center"},e))))))};mn.fragment=cn,mn.displayName="BalanceSection";var dn=l.J1`
+  fragment BenefitFragment on OneKeyUniversalContextualOnboardingBenefit {
+    icon {
+      token
+    }
+    description
+  }
+`,un=({data:e})=>{const{icon:n,description:t}=e;return a.createElement(D.a,null,a.createElement(v.a,{name:n.token,size:v.E.SMALL}),t)};un.fragment=dn,un.displayName="Benefit";var En={[g.OB.SMALL]:2,[g.OB.MEDIUM]:1},gn=({benefits:e})=>{const n=(0,g.s5)(En);return a.createElement(D.E,{bullet:"icon-alternate",size:n},e.map(((e,n)=>a.createElement(un,{key:n,data:e}))))};gn.displayName="Benefits";var pn=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{padding:{blockend:"two"}},a.createElement("div",null,e))),a.createElement(g.rw,null,a.createElement(C.b,{padding:{blockend:"four"}},a.createElement("div",null,e))));pn.displayName="BenefitsSpacing";var yn=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{padding:{block:"six"}},e)),a.createElement(g.rw,null,a.createElement(C.b,{padding:{block:"sixteen"}},e)),a.createElement(g.zQ,null,a.createElement(C.b,{padding:{block:"twelve"}},e)));yn.displayName="BlockSpacing";var vn=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{margin:{blockend:"eight"}},a.createElement("div",null,e))),a.createElement(g.rw,null,a.createElement(C.b,{margin:{blockend:"sixteen"}},a.createElement("div",null,e))),a.createElement(g.zQ,null,a.createElement(C.b,{margin:{blockend:"eight"}},a.createElement("div",null,e))));vn.displayName="BrandAssetsSpacing";var bn=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(F.i,{border:!0},a.createElement(C.b,{padding:{block:"six",inline:"eight"}},a.createElement("div",null,e)))),a.createElement(g.rw,null,a.createElement(F.i,{border:!0},a.createElement(C.b,{padding:{block:"eight",inline:"twelve"}},a.createElement("div",null,e)))));bn.displayName="CardWithSpacing";var Sn=({children:e})=>a.createElement(g.LM,null,a.createElement(g.NP,null,a.createElement(C.b,{padding:{inline:"six"}},e)),a.createElement(g.rw,null,a.createElement(C.b,{padding:{inline:"sixteen"}},e)),a.createElement(g.zQ,null,a.createElement(C.b,{padding:{inline:"twelve"}},e)));Sn.displayName="ContentSpacing";var On=l.J1`
+  fragment LoyaltyUniversalPopUpButtonFragment on LoyaltyUniversalPopUpButton {
+    button {
+      ...EGDSButtonFragment
+    }
+  }
+  ${fe.fragment}
+`,Nn=({data:e,isFullWidth:n,onClickHandler:t})=>a.createElement(fe,{onClickHandler:t,data:e.button,isFullWidth:n});Nn.fragment=On,Nn.displayName="LoyaltyUniversalPopUpButton";var fn=l.J1`
+  fragment EGDSPlainTextFragment on EGDSPlainText {
+    text
+  }
+`,_n=({className:e,inline:n,size:t,theme:r,data:l})=>{const{text:i}=l;return a.createElement(I.c,{className:e,inline:n,size:t,theme:r},i)};_n.fragment=fn,_n.displayName="EGDSPlainText";var Ln=(e=>(e.INVERSE="inverse",e.LOYALTY="loyalty",e.NEGATIVE="negative",e.POSITIVE="positive",e.PENDING="default",e))(Ln||{}),kn={100:100,200:200,300:300,400:400,500:500,600:600,700:700,800:800,900:900},hn={BOLD:"bold",MEDIUM:"medium",REGULAR:"regular"},In=l.J1`
+  fragment EGDSStylizedTextFragment on EGDSStylizedText {
+    __typename
+    stylizedText: text
+    theme
+    weight
+    textSize: size
+  }
+`,Cn=({data:e,whiteSpace:n,useBackendTheme:t=!0,align:r,inline:l})=>{const{stylizedText:i,theme:o,weight:c,textSize:s}=e,m=t&&o?Ln[o]:void 0;return a.createElement(I.c,{theme:m,align:r,whiteSpace:n,weight:c?hn[c]:void 0,size:s?kn[s]:void 0,inline:l},i)};Cn.fragment=In,Cn.displayName="EGDSStylizedText";var Un=l.J1`
+  fragment UILinkActionFragment on UILinkAction {
+    accessibility
+    target
+    resource {
+      __typename
+      value
+    }
+    analytics {
+      referrerId
+      linkName
+    }
+  }
+`,An=({children:e,data:n,onClick:t,size:r,disabled:l,isButton:i,inline:o,clickstreamAnalyticsData:c})=>{const{resource:s,analytics:m,accessibility:d}=n,u=(0,E.KY)(),g=(0,E.iQ)(),p=a.useCallback((()=>{m&&u(m.referrerId,m.linkName),(null==c?void 0:c.serverPayload)&&(null==c?void 0:c.eventName)&&(null==c?void 0:c.eventVersion)&&g({clientPayload:{event:{event_name:c.eventName,event_version:c.eventVersion}},serverPayload:c.serverPayload})}),[m,c,u,g]);return i?a.createElement(h.E,{onClick:t,size:r,disabled:l,inline:o},a.createElement("button",{type:"button",onClickCapture:p,"aria-label":d||""},e)):a.createElement("a",{href:s.value,onClickCapture:p,"aria-label":d||""},e)};An.fragment=Un,An.displayName="UILinkAction";var Rn=l.J1`
+  fragment EGDSInlineLinkFragment on EGDSInlineLink {
+    __typename
+    action {
+      ...UILinkActionFragment
+    }
+    disabled
+    text
+    size
+  }
+  ${An.fragment}
+`,Dn=({data:e,onClickHandler:n})=>{const{action:t,disabled:r,size:l,text:i}=e,o=(0,E.KY)(),c=a.useCallback((()=>{o(t.analytics.referrerId,t.analytics.linkName),n&&n()}),[o,t.analytics]);return a.createElement(h.E,{onClick:c,inline:!0,disabled:r,size:h.b[l]},a.createElement("a",{href:t.resource.value,target:t.target},i,t.accessibility&&a.createElement("span",{className:"is-visually-hidden"},t.accessibility)))};Dn.fragment=Rn,Dn.displayName="EGDSInlineLink";var Fn=l.J1`
+  fragment EGDSSpannableTextInlineContentFragment on EGDSSpannableTextItem {
+    ...EGDSStylizedTextFragment
+    ...EGDSPlainTextFragment
+    ...EGDSStandardLinkFragment
+    ...EGDSInlineLinkFragment
+  }
+
+  ${Cn.fragment}
+  ${_n.fragment}
+  ${Re.fragment}
+  ${Dn.fragment}
+`,xn=({size:e,align:n,theme:t,data:r})=>{switch(r.__typename){case"EGDSStylizedText":return a.createElement(Cn,{align:n,data:r,inline:!0});case"EGDSPlainText":return a.createElement(_n,{data:r,size:e,theme:t,inline:!0});case"EGDSStandardLink":return a.createElement(Re,{data:r});case"EGDSInlineLink":return a.createElement(Dn,{data:r});default:return null}};xn.fragment=Fn,xn.displayName="EGDSSpannableTextInlineContent";var Tn=l.J1`
+  fragment EGDSSpannableTextFragment on EGDSSpannableText {
+    inlineContent {
+      ...EGDSSpannableTextInlineContentFragment
+    }
+  }
+
+  ${xn.fragment}
+`,Bn=({align:e,data:n,size:t,theme:r})=>{var l;return(null==(l=null==n?void 0:n.inlineContent)?void 0:l.length)?a.createElement(a.Fragment,null,n.inlineContent.map(((n,l)=>a.createElement(a.Fragment,{key:`inline-content-${l}`},a.createElement(xn,{align:e,data:n,size:t,theme:r})," ")))):null};Bn.fragment=Tn,Bn.displayName="EGDSSpannableText";var Pn=l.J1`
+  fragment EGDSTextFragment on EGDSText {
+    __typename
+    ...EGDSPlainTextFragment
+    ...EGDSStandardLinkFragment
+  }
+  ${_n.fragment}
+  ${Re.fragment}
+`,Gn=({data:e,standardLinkProps:n,plainTextProps:t})=>{const{__typename:r}=e;switch(r){case"EGDSStandardLink":return a.createElement(Re,K({data:e},n));case"EGDSPlainText":return a.createElement(_n,K({data:e},t));default:return null}};Gn.fragment=Pn,Gn.displayName="LoyaltyEGDSText";var wn=l.J1`
+  fragment LoyaltyAnchoredCurrencyDescriptionFragment on LoyaltyAnchoredCurrencyDescription {
+    balance {
+      ...EGDSStylizedTextFragment
+    }
+    subtitle {
+      ...EGDSStylizedTextFragment
+    }
+  }
+  ${Cn.fragment}
+`,zn=({data:e})=>{const{balance:n,subtitle:t}=e;return a.createElement(d.i,{alignItems:"center",direction:"column"},a.createElement(d.j,null,a.createElement(Cn,{data:n})),a.createElement(d.j,{maxWidth:"37x"},a.createElement("div",null,a.createElement(Cn,{align:"center",data:t}))))};zn.fragment=wn,zn.displayName="LoyaltyAnchoredCurrencyDescription";var Mn=l.J1`
+  fragment LoyaltyAnchoredCurrencySectionFragment on LoyaltyAnchoredCurrencySection {
+    anchoredBalance {
+      ...LoyaltyAnchoredCurrencyDescriptionFragment
+    }
+    posaBalance {
+      ...LoyaltyAnchoredCurrencyDescriptionFragment
+    }
+    transferIcon {
+      ...EGDSIconFragment
+    }
+  }
+  ${zn.fragment}
+  ${ce.fragment}
+`,Kn=({data:e})=>{const{anchoredBalance:n,posaBalance:t,transferIcon:r}=e;return a.createElement(d.i,{space:"two",justifyContent:"center"},a.createElement(d.j,null,a.createElement(zn,{data:t})),a.createElement(d.j,null,a.createElement(ce,{data:r})),a.createElement(d.j,null,a.createElement(zn,{data:n})))};Kn.fragment=Mn,Kn.displayName="LoyaltyAnchoredCurrencySection";var $n=l.J1`
+  fragment LoyaltyStandardLinkFragment on LoyaltyStandardLink {
+    analytics {
+      eventName
+      eventVersion
+      payload
+    }
+    link {
+      ...EGDSStandardLinkFragment
+    }
+  }
+  ${Re.fragment}
+`,Vn=({data:e,align:n})=>{const{analytics:t,link:r}=e,l={eventName:null==t?void 0:t.eventName,eventVersion:null==t?void 0:t.eventVersion,serverPayload:null==t?void 0:t.payload},i=(0,E.iQ)(),o=a.useCallback((()=>{(null==l?void 0:l.serverPayload)&&(null==l?void 0:l.eventName)&&(null==l?void 0:l.eventVersion)&&i({clientPayload:{event:{event_name:l.eventName,event_version:l.eventVersion}},serverPayload:l.serverPayload})}),[i,l]);return a.createElement(Re,{data:r,onClickHandler:o,align:n})};Vn.fragment=$n,Vn.displayName="LoyaltyStandardLink";var Wn=l.J1`
+  fragment LoyaltyUniversalPopUpSectionContentTypesFragment on LoyaltyUniversalPopUpSectionContent {
+    ...EGDSStylizedTextFragment
+    ...LoyaltyAnchoredCurrencySectionFragment
+    ...LoyaltyStandardLinkFragment
+  }
+  ${Cn.fragment}
+  ${Kn.fragment}
+  ${Vn.fragment}
+`,jn=({data:e,stylizedTextProps:n,loyaltyStandardLinkProps:t})=>{switch(e.__typename){case"EGDSStylizedText":return a.createElement(Cn,K({data:e},n));case"LoyaltyAnchoredCurrencySection":return a.createElement(Kn,{data:e});case"LoyaltyStandardLink":return a.createElement(Vn,K({data:e},t));default:return null}};jn.fragment=Wn,jn.displayName="LoyaltyUniversalPopUpSectionContentTypes";var Jn=l.J1`
+  fragment LoyaltyUniversalPopUpDialogSectionFragment on LoyaltyUniversalPopUpDialogSection {
+    content {
+      ...LoyaltyUniversalPopUpSectionContentTypesFragment
+    }
+    header
+    alignment
+  }
+  ${jn.fragment}
+`,Yn={CENTER:"center",LEFT:"left",RIGHT:"right"},Hn=({data:e})=>{const{content:n,header:t,alignment:r}=e,l=r?Yn[r]:"left";return a.createElement(d.i,{space:"two",direction:"column"},a.createElement(d.j,null,a.createElement(I.E,{tag:"h2",size:5,align:l},t)),n.map(((e,n)=>a.createElement(d.j,{key:`${e.__typename}_${n}`},a.createElement("div",null,a.createElement(jn,{data:e,stylizedTextProps:{align:l},loyaltyStandardLinkProps:{align:l}}))))))};Hn.fragment=Jn,Hn.displayName="LoyaltyUniversalPopUpDialogSection";var Qn=l.J1`
+  fragment LoyaltyUniversalPopUpDialogFragment on LoyaltyUniversalPopUpDialog {
+    dismissButton {
+      ...LoyaltyUniversalPopUpButtonFragment
+    }
+    sections {
+      ...LoyaltyUniversalPopUpDialogSectionFragment
+    }
+    ariaLabel
+    type
+    toolbar {
+      actions {
+        primary {
+          accessibility
+        }
+      }
+    }
+    impressionAnalytics {
+      eventName
+      eventVersion
+      payload
+    }
+  }
+  ${Nn.fragment}
+  ${Hn.fragment}
+`,Xn={CENTERED:"centered",FULLSCREEN:"full"},qn=e=>{if(!e)return"centered";return Xn[e]||"centered"},Zn=({handleClose:e,triggerRef:n,isVisible:t,data:r,analytics:l})=>{const{sections:i,dismissButton:c,impressionAnalytics:s,toolbar:m,type:u,ariaLabel:g}=r,p=(0,E.iQ)();(0,a.useEffect)((()=>{(null==s?void 0:s.payload)&&(null==s?void 0:s.eventName)&&(null==s?void 0:s.eventVersion)?p({clientPayload:{event:{event_name:s.eventName,event_version:s.eventVersion}},serverPayload:s.payload}):l&&p(l)}),[]);const y=K({inline:"six"},m?{blockend:"six"}:{block:"six"});return a.createElement(o.e,{triggerRef:n,isVisible:t,type:qn(u),returnFocusOnClose:!0,centeredSheetSize:"small",ariaLabel:null!=g?g:void 0},m&&a.createElement(x.b,{navigationContent:{onClick:e,navIconLabel:m.actions.primary.accessibility||""}}),a.createElement(o.f,{padded:!1},a.createElement(C.b,{padding:K({},y)},a.createElement("div",null,a.createElement(d.i,{space:"four",direction:"column"},i.map(((e,n)=>a.createElement(d.j,{key:n},a.createElement("div",null,a.createElement(Hn,{data:e}))))),c&&a.createElement(d.j,null,a.createElement("div",null,a.createElement(Nn,{onClickHandler:e,data:c,isFullWidth:!0}))))))))};Zn.fragment=Qn,Zn.displayName="LoyaltyUniversalPopUpDialog";var et=l.J1`
+  fragment InfoSectionFragment on OneKeyUniversalOnboardingInfoSection {
+    infoButton {
+      ...OnboardingButtonFragment
+    }
+    infoDialog {
+      ...LoyaltyUniversalPopUpDialogFragment
+    }
+  }
+
+  ${Ce.fragment}
+  ${Zn.fragment}
+`,nt=({data:e})=>{const{infoButton:n,infoDialog:t}=e,r=(0,a.useRef)(null),[l,i,c]=(0,p.useDialog)("one-key-onboarding-info-section-dialog","infoPwaDialog",!0),s=(0,a.useCallback)((()=>{i.openDialog()}),[i]),d=(0,a.useCallback)((()=>{i.closeDialog()}),[i]);return a.createElement(a.Fragment,null,a.createElement(Ce,{domRef:r,data:n,size:m.E.SMALL,isNoTextAllowed:!0,isFullWidth:!0,onNullActionClick:s}),a.createElement(o.h,{isVisible:l},a.createElement(c,null,a.createElement(Zn,{data:t,handleClose:d,triggerRef:r,isVisible:l,analytics:{event:{event_version:"1.0.0",event_name:"onekey_context_onboarding_onekey_cash.presented",event_type:"Impression"},experience:{page_name:"OKOnboarding",page_name_detailed:"OKOnboardingContextualScreen"}}}))))};nt.fragment=et,nt.displayName="InfoSection";var tt={[g.OB.SMALL]:4,[g.OB.MEDIUM]:3},at=({children:e})=>{const n=(0,g.s5)(tt);return a.createElement(C.b,{margin:{blockend:"eight"}},a.createElement(d.j,null,a.createElement(I.E,{tag:"h1",size:n,align:"center"},e)))};at.displayName="Title";var rt=({dismissButton:e})=>{const{accessibility:n,analytics:t}=e.button,r=(0,E.KY)(),{closeDialog:l}=ee(),{handleOnboardingButtonClick:i}=he({button:e,onNullActionClick:l}),o=(0,a.useCallback)((()=>{t&&r(t.referrerId,t.linkName),i()}),[t,r,i]);return n?a.createElement(x.b,{navigationContent:{navIconLabel:n,onClick:o},elevation:"flat"}):null},lt=l.J1`
+  fragment ContextualScreenFragment on OneKeyUniversalOnboardingContextualScreen {
+    dismissButton {
+      ...OnboardingButtonFragment
+    }
+    brandAssets {
+      ...BrandAssetsFragment
+    }
+    oneKeyCashInfoSection {
+      ...InfoSectionFragment
+    }
+    tierBadge {
+      ...EGDSLoyaltyBadgeFragment
+    }
+    title
+    benefits {
+      ...BenefitFragment
+    }
+    balanceSection {
+      ...BalanceSectionFragment
+    }
+    primaryButton {
+      ...OnboardingButtonFragment
+    }
+    primaryLink {
+      ...OnboardingLinkFragment
+    }
+    ariaLabel
+  }
+
+  ${xe.fragment}
+  ${on.fragment}
+  ${ve.fragment}
+  ${nt.fragment}
+  ${un.fragment}
+  ${mn.fragment}
+  ${Ce.fragment}
+`,it=({data:e})=>{const{brandAssets:n,dismissButton:t,oneKeyCashInfoSection:r,tierBadge:l,title:i,benefits:c,balanceSection:g,primaryButton:p,primaryLink:y,ariaLabel:v}=e,b=(0,s.useLoggerEvents)(Q),{isDialogOpen:S}=ee(),{proceedWithOnboardingFlow:O}=re(),N=(0,a.useCallback)((()=>{b.ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_SUCCESS.log(X({message:"Contextual Screen mutation success"}))}),[b]),f=(0,a.useCallback)((e=>{b.ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_FAILURE.log(X({message:`Contextual Screen mutation failure. Onboarding Operation response: ${JSON.stringify(e.data)}`}))}),[b]),_=(0,a.useCallback)((e=>{b.ONE_KEY_UNIVERSAL_ONBOARDING_CONTEXTUAL_SCREEN_MUTATION_ERROR.log(X({message:"Contextual Screen mutation error",error:e}))}),[b]);return a.createElement(o.e,{isVisible:S,triggerRef:null,type:"full",ariaLabel:v},a.createElement(o.f,{padded:!1},a.createElement(E.E0,{eventData:{event:{event_version:"1.0.0",event_name:"onekey_context_onboarding.viewed",event_type:"Page View"},experience:{page_name:"OKOnboarding",page_name_detailed:"OKOnboardingContextualScreen"}}},a.createElement(u.E,{rows:["auto",(0,u.e)("0px","1fr")],blockSize:"100vb"},t&&a.createElement(u.a,null,a.createElement(rt,{dismissButton:t})),a.createElement(u.a,null,a.createElement(Sn,null,a.createElement(u.E,{columns:[(0,u.e)("0px","480px")],justifyContent:"center",alignItems:"center","data-stid":"one-key-onboarding-contextual-screen"},a.createElement(u.a,null,a.createElement(yn,null,a.createElement("div",null,n&&a.createElement(vn,null,a.createElement(ve,{data:n})),a.createElement(at,null,i),a.createElement(bn,null,a.createElement(d.i,{direction:"column",justifyContent:"center",alignItems:"center",space:"four"},a.createElement(d.j,null,a.createElement(on,{data:l})),c&&a.createElement(d.j,null,a.createElement(pn,null,a.createElement(gn,{benefits:c}))),g&&a.createElement(d.j,null,a.createElement(mn,{data:g})))),r&&a.createElement(C.b,{margin:{blockstart:"four"}},a.createElement("div",null,a.createElement(nt,{data:r}))),a.createElement(C.b,{margin:{blockstart:"eight"}},a.createElement("div",null,a.createElement(Ce,{data:p,isFullWidth:!0,size:m.E.LARGE,dataStid:"one-key-onboarding-contextual-screen-primary-button",onOperationSuccess:N,onOperationFailure:f,onOperationError:_,onNullActionClick:O}))),y&&a.createElement(C.b,{margin:{blockstart:"four"}},a.createElement("div",null,a.createElement(xe,{data:y,isButton:!0,size:m.E.LARGE,isFullWidth:!0})))))))))))))};it.fragment=lt,it.displayName="ContextualScreen";var ot=()=>{const{currentScreen:e}=ae();switch(null==e?void 0:e.__typename){case"OneKeyUniversalOnboardingWelcomeScreen":return a.createElement(tn,{data:e});case"OneKeyUniversalOnboardingContextualScreen":return a.createElement(it,{data:e});default:return null}};ot.displayName="OnboardingScreen";var ct=l.J1`
+  query OneKeyUniversalOnboardingQuery($context: ContextInput!, $originUrl: String) {
+    oneKeyUniversalOnboarding(context: $context, originUrl: $originUrl) {
+      ...OneKeyUniversalOnboardingScreenFragment
+    }
+  }
+
+  fragment OneKeyUniversalOnboardingScreenFragment on OneKeyUniversalOnboardingScreen {
+    screen {
+      ...OneKeyUniversalOnboardingScreenResultFragment
+    }
+  }
+
+  fragment OneKeyUniversalOnboardingScreenResultFragment on OneKeyUniversalOnboardingScreenResult {
+    ...WelcomeScreenFragment
+    ...ContextualScreenFragment
+  }
+
+  ${tn.fragment}
+  ${it.fragment}
+`,st=({inputs:e,isRedirectionEnabled:n})=>{const{isDialogOpen:t,openDialog:r,DialogComponent:l}=ee(),[m,d]=(0,a.useState)(!1),{context:u}=(0,c.R)(),E=(0,s.useLoggerEvents)(Q),{setScreens:g}=ae(),p=$(K({},e),{context:u}),{data:y,error:v,loading:b}=(0,i.I)(ct,{variables:p,ssr:!1});return(0,a.useEffect)((()=>{y&&g(y.oneKeyUniversalOnboarding)}),[y]),(0,a.useEffect)((()=>{(null==y?void 0:y.oneKeyUniversalOnboarding)&&y.oneKeyUniversalOnboarding.length>0&&!m&&(r(),d(!0))}),[null==y?void 0:y.oneKeyUniversalOnboarding,r,m]),(0,a.useEffect)((()=>{0===(null==y?void 0:y.oneKeyUniversalOnboarding.length)&&n&&H(e.originUrl)}),[null==y?void 0:y.oneKeyUniversalOnboarding,e.originUrl,n]),(0,a.useEffect)((()=>{v&&(E.ONE_KEY_UNIVERSAL_ONBOARDING_QUERY_ERROR.log(X({message:"OneKeyUniversalOnboardingQuery error",error:v})),n&&W())}),[v,n,E]),b||v||!y||0===y.oneKeyUniversalOnboarding.length?null:a.createElement(o.h,{isVisible:t},a.createElement(l,null,a.createElement(ot,null)))};st.displayName="OneKeyUniversalOnboarding";var mt=({additionalContext:e,isRedirectionEnabled:n=!1})=>{const{exposure:t}=(0,r.useExperiment)("Onboarding_v2_Web"),{exposure:l}=(0,r.useExperiment)("Onboarding_v2_OneKey_Web"),i=1===t.bucket,o=1===l.bucket,c=i&&o,s=!c;return(0,a.useEffect)((()=>{s&&n&&H(null==e?void 0:e.originUrl)}),[]),s?null:a.createElement(Z,null,a.createElement(te,null,a.createElement(Le,null,c&&a.createElement(st,{inputs:{originUrl:null==e?void 0:e.originUrl},isRedirectionEnabled:n}))))};mt.displayName="sharedui-OneKeyOnboarding";const dt=()=>a.createElement(mt,{additionalContext:{}});var ut=dt}}]);
+//# sourceMappingURL=https://bernie-assets.s3.us-west-2.amazonaws.com/lotus-home-ui/blossom-one-key-onboarding.2339d3e003cbe513b897.js.map
